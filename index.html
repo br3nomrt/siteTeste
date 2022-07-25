@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grana seca</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+
+<body class="corpo-pai">
+
+    <header class="cabecalho">
+
+        <img src="https://www.svgrepo.com/show/303639/counter-strike-global-offensive-2-logo.svg" alt="logo csgo"
+            height="110px">
+
+        <nav class="links">
+            <a href="inventario.html" target="_blank">Inventário</a>
+            <a href="histVenda.html" target="_blank">Histórico de venda</a>
+            <a href="histCompra.html" target="_blank">Histórico de compra</a>
+        </nav>
+
+    </header>
+
+    <main class="meio">
+
+        <h1>Adicione a skin</h1>
+        <div class="inputs">
+            <input class="input" type="text" id="skin" placeholder="skin">
+            <input class="input" type="number" id="quantidade" placeholder="quantidade">
+            <input class="input" type="number" id="valor" placeholder="valor">
+            <input class="input" type="number" id="valorVenda" placeholder="valor da venda">
+            <button id="att" class="botao" onclick="skin.adicionar()">adicionar</button>
+            <button class="botao" onclick="skin.cancelar()">cancelar</button>
+            
+        </div>
+
+        <span class="lista"> Lista de Skins</span>
+
+        <div class="tabela">
+        <table border="1">
+            <thead>
+                <th class="center">id</th>
+                <th>skin</th>
+                <th class="center">qntd</th>
+                <th class="center">valor</th>
+                <th class="center">valor da venda</th>
+                <th class="center">lucro</th>
+                <th class="center">ação</th>
+            </thead>
+            <tbody id="tbody">
+                
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <button id="mostrar-dados" class="botao" onclick="skin.mostrarDados()">Mostrar os Dados</button>
+        <button class="botao" onclick="skin.limpar()">Limpar os Dados</button>
+    </div>
+
+    </main>
+
+    <footer class="pezinho">
+        <div class="titulo-final">
+            <h4>sites de negócios</h4>
+        </div>
+
+        <div class="links-sites">
+            <a href="https://market.csgo.com/sell/" target="_blank"> russos</a>
+            <a href="https://waxpeer.com/" target="_blank"> americanos</a>
+            <a href="https://buff.163.com/" target="_blank"> chineses</a>
+        </div>
+
+
+    </footer>
+
+</body>
+
+</html>

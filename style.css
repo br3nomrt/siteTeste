@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+a:link {
+    color: white;
+    cursor: pointer;
+}
+a:visited {
+    color: white;
+}
+a:hover {
+    text-decoration: underline;
+    color: antiquewhite;
+}
+
+.links {
+    display: flex;
+    gap: 35px;
+}
+
+
+
+body {
+    background-color: rgb(34, 34, 34);
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    background-image: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/730/ef7cb44d312df5038cba0f69a0901da427900645.jpg');
+}
+
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    background-image: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/730/ef7cb44d312df5038cba0f69a0901da427900645.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2vw;
+}
+
+.meio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: px;
+    margin-top: 20px;
+    
+}
+
+.tabela {
+    margin: 10px;
+    border-collapse: collapse;
+    background-color: gray;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid white;
+    width: 650px;
+}
+table td img {
+    width: 30px;
+}
+
+table th {
+    background-color: black;
+}
+
+.center {
+    text-align: center;
+}
+
+.inputs {
+    margin-top: 5px;
+}
+
+.botao {
+    border-radius: 1px;
+    border-style: none;
+    padding: 10px;
+    outline: 0;
+}
+
+.input {
+   padding: 10px;
+   border-style: none;
+   outline: 0;
+}
+
+.lista {
+    margin-top: 50px;
+}
+
+.pezinho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 23vw;
+}
+
+.titulo-final {
+    margin-bottom: 10px;
+}
+
+.links-sites {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.tamanho {
+    width: 10px;
+}
