@@ -1,11 +1,10 @@
 class Skin {
 
     constructor() {
-        this.id = 0;
+        this.id = 1;
         this.arraySkins = [];
         this.editId = null;
         window.addEventListener('load', function(event){
-            console.log('ae krl')
             this.document.getElementById('mostrar-dados').click()
             
         })
@@ -14,9 +13,9 @@ class Skin {
     
     
     adicionar() {
-        this.id++
         const skin = this.inputDados()
         if (this.validador(skin)) {
+            this.id++
             if (this.editId == null) {
                 this.editar(skin)
             }
@@ -25,7 +24,6 @@ class Skin {
             }
             
         }
-
         this.salvarDados()
         this.listaTabela()
         this.cancelar()
@@ -136,18 +134,13 @@ class Skin {
 
     validador(skin) {
 
-        let msg = ''
-
         if (skin.nomeSkin == '') {
             alert("precisa adicionar algo")
-        }
-
-        if (msg != '') {
-            alert(msg)
             return false
         }
-
-        return true
+        else {
+            return true
+        }
 
     }
 
@@ -198,7 +191,6 @@ class Skin {
     }
 
 }
-
 
 var skin = new Skin;
 
