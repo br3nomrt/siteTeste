@@ -6,7 +6,6 @@ class Skin {
         this.editId = null;
         window.addEventListener('load', function(event){
             this.document.getElementById('mostrar-dados').click()
-            
         })
         
     }
@@ -39,6 +38,7 @@ class Skin {
                 this.arraySkins[i].quantidade = skin.quantidade
                 this.arraySkins[i].valorVenda = skin.valorVenda
                 this.arraySkins[i].lucro = skin.lucro
+                this.arraySkins[i].lucro2 = skin.lucro2
             }
         }
     }
@@ -57,6 +57,7 @@ class Skin {
             let td_valor = tr.insertCell()
             let td_valorVenda = tr.insertCell()
             let td_lucro = tr.insertCell()
+            let td_lucro2 = tr.insertCell()
             let td_acao = tr.insertCell()
 
             td_id.innerText = this.arraySkins[i].id
@@ -65,6 +66,7 @@ class Skin {
             td_valor.innerText = this.arraySkins[i].valor
             td_valorVenda.innerText = this.arraySkins[i].valorVenda
             td_lucro.innerText = this.arraySkins[i].lucro
+            td_lucro2.innerText = this.arraySkins[i].lucro2
 
             td_id.classList.add('center')
             td_skin.classList.add('center')
@@ -73,6 +75,7 @@ class Skin {
             td_acao.classList.add('center')
             td_valorVenda.classList.add('center')
             td_lucro.classList.add('center')
+            td_lucro2.classList.add('center')
 
             let imgEdit2 = document.createElement('img');
             imgEdit2.src = 'https://cdn-icons-png.flaticon.com/512/1827/1827951.png'
@@ -107,6 +110,7 @@ class Skin {
         document.getElementById('valor').value = dados.valor
         document.getElementById('valorVenda').value = dados.valorVenda
         dados.lucro
+        dados.lucro2
 
         document.getElementById('att').innerText = 'atualizar'
     }
@@ -128,6 +132,7 @@ class Skin {
         let totalGanho = skin.lucro
 
         skin.lucro = (totalGanho * 0.9 - totalGasto) / skin.quantidade;
+        skin.lucro2 = (totalGanho * 0.93 - totalGasto) / skin.quantidade;
 
         return skin
     }
@@ -183,6 +188,7 @@ class Skin {
         this.listaTabela()
         console.log(this.arraySkins.length)
         this.id = this.arraySkins.length
+        
         
     }
 
