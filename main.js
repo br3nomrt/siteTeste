@@ -4,13 +4,13 @@ class Skin {
         this.id = 1;
         this.arraySkins = [];
         this.editId = null;
-        window.addEventListener('load', function(event){
+        window.addEventListener('load', function (event) {
             this.document.getElementById('mostrar-dados').click()
         })
-        
+
     }
-    
-    
+
+
     adicionar() {
         const skin = this.inputDados()
         if (this.validador(skin)) {
@@ -21,11 +21,10 @@ class Skin {
             else {
                 this.atualizar(this.editId, skin)
             }
-            
+
         }
         this.salvarDados()
         this.listaTabela()
-        this.cancelar()
 
     }
 
@@ -35,7 +34,6 @@ class Skin {
             if (this.arraySkins[i].id == id) {
                 this.arraySkins[i].nomeSkin = skin.nomeSkin
                 this.arraySkins[i].valor = skin.valor
-                this.arraySkins[i].quantidade = skin.quantidade
                 this.arraySkins[i].valorVenda = skin.valorVenda
                 this.arraySkins[i].lucro = skin.lucro
                 this.arraySkins[i].lucro2 = skin.lucro2
@@ -53,7 +51,6 @@ class Skin {
 
             let td_id = tr.insertCell()
             let td_skin = tr.insertCell()
-            let td_quantidade = tr.insertCell()
             let td_valor = tr.insertCell()
             let td_valorVenda = tr.insertCell()
             let td_lucro = tr.insertCell()
@@ -62,7 +59,6 @@ class Skin {
 
             td_id.innerText = this.arraySkins[i].id
             td_skin.innerText = this.arraySkins[i].nomeSkin
-            td_quantidade.innerText = this.arraySkins[i].quantidade
             td_valor.innerText = this.arraySkins[i].valor
             td_valorVenda.innerText = this.arraySkins[i].valorVenda
             td_lucro.innerText = this.arraySkins[i].lucro
@@ -70,7 +66,6 @@ class Skin {
 
             td_id.classList.add('center')
             td_skin.classList.add('center')
-            td_quantidade.classList.add('center')
             td_valor.classList.add('center')
             td_acao.classList.add('center')
             td_valorVenda.classList.add('center')
@@ -96,9 +91,9 @@ class Skin {
     editar(skin) {
 
         skin.valor = parseFloat(skin.valor)
-        
+
         this.arraySkins.push(skin)
-        
+
     }
 
     edit(dados) {
@@ -106,7 +101,6 @@ class Skin {
         this.editId = dados.id
 
         document.getElementById('skin').value = dados.nomeSkin
-        document.getElementById('quantidade').value = dados.quantidade
         document.getElementById('valor').value = dados.valor
         document.getElementById('valorVenda').value = dados.valorVenda
         dados.lucro
@@ -121,18 +115,11 @@ class Skin {
         skin.id = this.id
         console.log(this.id)
         skin.nomeSkin = document.getElementById('skin').value;
-        skin.quantidade = document.getElementById('quantidade').value;
         skin.valor = document.getElementById('valor').value;
         skin.valorVenda = document.getElementById('valorVenda').value
 
-
-        skin.lucro = (skin.quantidade * skin.valor)
-        let totalGasto = skin.lucro
-        skin.lucro = (skin.quantidade * skin.valorVenda)
-        let totalGanho = skin.lucro
-
-        skin.lucro = (totalGanho * 0.9 - totalGasto) / skin.quantidade;
-        skin.lucro2 = (totalGanho * 0.93 - totalGasto) / skin.quantidade;
+        skin.lucro = skin.valorVenda * 0.9 - skin.valor
+        skin.lucro2 = skin.valorVenda * 0.93 - skin.valor
 
         return skin
     }
@@ -163,7 +150,6 @@ class Skin {
 
     cancelar() {
         document.getElementById('skin').value = ''
-        document.getElementById('quantidade').value = ''
         document.getElementById('valor').value = ''
         document.getElementById('valorVenda').value = ''
 
@@ -188,8 +174,8 @@ class Skin {
         this.listaTabela()
         console.log(this.arraySkins.length)
         this.id = this.arraySkins.length
-        
-        
+
+
     }
 
     limpar() {
